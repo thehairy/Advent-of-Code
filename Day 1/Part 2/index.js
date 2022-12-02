@@ -6,16 +6,9 @@ module.exports = {
         let calories = [];
         let temp = 0;
         for (let i of input) {
-            if (i) {
-                temp += +i;
-            } else {
-                calories.push(temp);
-                temp = 0;
-            }
+            temp += +i;
+            if (!i) calories.push(temp), temp = 0;
         }
-        calories.push(temp);
-        calories.sort((a, b) => a - b);
-        calories = calories.reverse();
-        return calories[0] + calories[1] + calories[2];
+        return calories.sort((a, b) => a - b).slice(-3).reduce((a, b) => a + b);
     }
 }
