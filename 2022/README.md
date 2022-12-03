@@ -6,6 +6,6 @@ You don't need a computer science background to participate - just a little prog
 
 ___
 
-[Day 1](https://github.com/thehairy/Advent-of-Code-2022/tree/main/2022/Day%201)
-[Day 2](https://github.com/thehairy/Advent-of-Code-2022/tree/main/2022/Day%202)
+[Day 1](https://github.com/thehairy/Advent-of-Code-2022/tree/main/2022/Day%201)  
+[Day 2](https://github.com/thehairy/Advent-of-Code-2022/tree/main/2022/Day%202)  
 [Day 3](https://github.com/thehairy/Advent-of-Code-2022/tree/main/2022/Day%203)  
