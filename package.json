@@ -6,9 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thehairy/Advent-of-Code-2022.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thehairy/Advent-of-Code-2022/issues"
+  },
+  "homepage": "https://github.com/thehairy/Advent-of-Code-2022#readme",
   "dependencies": {
     "table": "^6.8.1"
   }

@@ -10,7 +10,7 @@ const scores = {
 module.exports = {
     run: () => {
         const fs = require('fs');
-        const input = fs.readFileSync('./Day 2/input.txt').toString().split('\n');
+        const input = fs.readFileSync('./2022/Day 2/input.txt').toString().split('\n');
 
         let overallScore = 0;
         for (let i of input) {

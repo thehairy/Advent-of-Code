@@ -2,7 +2,7 @@ const fs = require('fs')
 module.exports = {
     run: () => {
         const alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        const input = fs.readFileSync('./Day 3/input.txt').toString().split('\n');
+        const input = fs.readFileSync('./2022/Day 3/input.txt').toString().split('\n');
         let sum = 0;
         let chunkSize = 3;
         for (let i = 0; i , i < input.length; i += chunkSize) {
