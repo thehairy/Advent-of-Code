@@ -9,3 +9,4 @@ ___
 
 [Day 1](https://github.com/thehairy/Advent-of-Code-2022/tree/main/Day%201)  
 [Day 2](https://github.com/thehairy/Advent-of-Code-2022/tree/main/Day%202)  
+[Day 3](https://github.com/thehairy/Advent-of-Code-2022/tree/main/Day%203)  
