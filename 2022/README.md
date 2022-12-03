@@ -6,7 +6,7 @@ You don't need a computer science background to participate - just a little prog
 
 ##############################################################################
 #**WARNING: DO NOT LOOK AT THE CODE IF YOU DON'T WANT SPOILERS FOR THE PREVIOUS DAYS!**#
-##############################################################################
+##############################################################################  
 ___
 
 [Day 1](https://github.com/thehairy/Advent-of-Code-2022/tree/main/2022/Day%201)
