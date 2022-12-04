@@ -1,7 +1,9 @@
 const { table } = require('table');
+const { readdirSync, readFileSync } = require('fs');
 const dayOne = require('./Day 1/index').run();
 const dayTwo = require('./Day 2/index').run();
 const dayThree = require('./Day 3/index').run();
+const dayFour = require('./Day 4/index').run();
 
 const data = [
     ['Day', 'Description', 'Part 1', 'Part 2', 'Took']
@@ -24,9 +26,9 @@ const config = {
     },
 }
 
-data.push(['1', 'Calorie Counting', dayOne.partOne, dayOne.partTwo, Number(dayOne.took).toFixed(2) + 'ms']);
-data.push(['2', 'Rock Paper Scissors', dayTwo.partOne, dayTwo.partTwo, Number(dayTwo.took).toFixed(2) + 'ms']);
-data.push(['3', 'Rucksack Reorganization', dayThree.partOne, dayThree.partTwo, Number(dayThree.took).toFixed(2) + 'ms']);
-
+readdirSync('./2022').filter(n => n.includes('Day')).forEach(i => {
+    const day = require(`./${i}/index.js`).run();
+    data.push([i.split(' ')[1], day.desc, day.partOne, day.partTwo, Number(day.took).toFixed(2) + 'ms']);
+})
 
 console.log(table(data, config));

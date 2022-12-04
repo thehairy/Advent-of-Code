@@ -5,6 +5,6 @@ module.exports = {
         const partOne = require('./Part 1/index').run();
         const partTwo = require('./Part 2/index').run();
         const endTime = performance.now()
-        return { desc: 'Rucksack Reorganization', partOne: partOne, partTwo: partTwo, took: endTime - startTime }
+        return { desc: 'Camp Cleanup', partOne: partOne, partTwo: partTwo, took: endTime - startTime }
     }
 }
