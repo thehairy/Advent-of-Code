@@ -2,7 +2,7 @@ const { table } = require('table');
 const { readdirSync } = require('fs');
 
 const data = [
-    ['Day', 'Description', 'Part 1', 'Part 2', 'Took']
+    ['Day', 'Description', 'Part 1', 'P1 - Took', 'Part 2', 'P2 - Took', 'Took']
 ];
 
 const config = {
@@ -12,6 +12,8 @@ const config = {
     columns: [
         { alignment: 'center' },
         { alignment: 'center', width: 23 },
+        { alignment: 'center' },
+        { alignment: 'center' },
         { alignment: 'center' },
         { alignment: 'center' },
         { alignment: 'center' }
@@ -25,10 +27,10 @@ const config = {
 readdirSync('./2023').filter(n => n.includes('Day')).forEach(i => {
     const day = require(`./${i}/index.js`).run();
     if (!process.argv[2] || process.argv[2] !== 'true') {
-        day.partOne = '|'.repeat(day.partOne.toString().length);
-        day.partTwo = '|'.repeat(day.partTwo.toString().length);
+        day.partOne.result = '|'.repeat(day.partOne.result.toString().length);
+        day.partTwo.result = '|'.repeat(day.partTwo.result.toString().length);
     }
-    data.push([i.split(' ')[1], day.desc, day.partOne, day.partTwo, Number(day.took).toFixed(2) + 'ms']);
+    data.push([i.split(' ')[1], day.desc, day.partOne.result, Number(day.partOne.took).toFixed(2) + 'ms', day.partTwo.result, Number(day.partTwo.took).toFixed(2) + 'ms', Number(day.took).toFixed(2) + 'ms']);
 })
 
 console.log(table(data, config));
