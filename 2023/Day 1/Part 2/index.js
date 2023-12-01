@@ -1,32 +1,27 @@
 const path = require("path");
 const fs = require('fs');
 
-function wordToNumber(str) {
-
-    return str
-}
-
 module.exports = {
     run: () => {
-        const input = fs.readFileSync(path.resolve(__dirname, "../input.txt")).toString().split('\r\n');
+        const i = fs.readFileSync(path.resolve(__dirname, "../input.txt")).toString().split('\r\n');
 
-        const obj = {
+        const o = {
             'zero': '0', 'one': '1', 'two': '2', 'three': '3', 'four': '4', 
             'five': '5', 'six': '6', 'seven': '7', 'eight': '8', 'nine': '9'
         };
 
-        let sum = 0;
-        for (const line of input) {
-            const numbersOfLine = [];
-            for (const char of line.replace(/(one|two|three|four|five|six|seven|eight|nine)/gi, match => obj[match])) {
-                if (!isNaN(char)) {
-                    numbersOfLine.push(char);
+        let s = 0;
+        for (const l of i) {
+            const nol = [];
+            for (const c of l.replace(/(one|two|three|four|five|six|seven|eight|nine)/gi, m => o[m])) {
+                if (!isNaN(c)) {
+                    nol.push(c);
                 }
             }
-            const lineSum = numbersOfLine[0] + numbersOfLine[numbersOfLine.length - 1];
-            sum += +lineSum;
+            const ls = nol[0] + nol[nol.length - 1];
+            s += +ls;
         }
 
-        return sum;
+        return s;
     }
 }
