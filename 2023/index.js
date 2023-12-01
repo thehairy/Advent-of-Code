@@ -24,6 +24,10 @@ const config = {
 
 readdirSync('./2023').filter(n => n.includes('Day')).forEach(i => {
     const day = require(`./${i}/index.js`).run();
+    if (!process.argv[2] || process.argv[2] !== 'true') {
+        day.partOne = '|'.repeat(day.partOne.toString().length);
+        day.partTwo = '|'.repeat(day.partTwo.toString().length);
+    }
     data.push([i.split(' ')[1], day.desc, day.partOne, day.partTwo, Number(day.took).toFixed(2) + 'ms']);
 })
 
