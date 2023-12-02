@@ -12,6 +12,7 @@ module.exports = {
         for (const game of games) {
             let impossible = false;
             const [id, cGame] = game.split(': ');
+            const gameId = +id.split(' ')[1];
             for (const cubes of cGame.split('; ')) {
                 for (const cube of cubes.split(', ')) {
                     const [amount, color] = cube.split(' ');
@@ -22,7 +23,7 @@ module.exports = {
                 }
             }
             if (!impossible) {
-                possibleGames.push(+id.split(' ')[1]);
+                possibleGames.push(gameId);
             }
         }
 

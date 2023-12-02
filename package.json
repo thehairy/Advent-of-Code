@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/thehairy/Advent-of-Code-2022#readme",
   "dependencies": {
+    "chalk": "^4.1.2",
     "table": "^6.8.1"
   }
 }
