@@ -53,4 +53,7 @@ readdirSync('./2023').filter(n => n.includes('Day')).forEach((i, index) => {
 if (process.argv[3] && process.argv[3] === 'skip') {
     return;
 }
+
+data.sort((a, b) => parseInt(a[0]) - parseInt(b[0]))
+
 console.log(table(data, config));
