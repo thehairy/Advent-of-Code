@@ -27,6 +27,6 @@ module.exports = {
             }
         }
 
-        return possibleGames.reduce((a, b) => a + b);
+        return possibleGames.reduce((a, b) => a + b, 0);
     }
 }
