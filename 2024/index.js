@@ -24,16 +24,20 @@ const config = {
     ],
     header: {
         alignment: 'center',
-        content: `${r('A')}${g('d')}${r('v')}${g('e')}${r('n')}${g('t')} ${r('o')}${g('f')} ${r('C')}${g('o')}${r('d')}${g('e')} ${r('-')} ${g('2')}${r('0')}${g('2')}${r('3')}`,
+        content: `${r('A')}${g('d')}${r('v')}${g('e')}${r('n')}${g('t')} ${r('o')}${g('f')} ${r('C')}${g('o')}${r('d')}${g('e')} ${r('-')} ${g('2')}${r('0')}${g('2')}${r('4')}`,
     },
 }
 
-readdirSync('./2023').filter(n => n.includes('Day')).forEach((i, index) => {
+readdirSync('./2024').filter(n => n.includes('Day')).forEach((i, index) => {
     const day = require(`./${i}/index.js`).run();
 
     if (!process.argv[3] || process.argv[3] !== 'true') {
-        day.partOne.result = '|'.repeat(day.partOne.result.toString().length);
-        day.partTwo.result = '|'.repeat(day.partTwo.result.toString().length);
+        if (day.partOne.result !== 'todo') {    
+            day.partOne.result = '|'.repeat(day.partOne.result.toString().length);
+        }
+        if (day.partTwo.result !== 'todo') {
+            day.partTwo.result = '|'.repeat(day.partTwo.result.toString().length);
+        }
     }
 
     const partOneTook = day.partOne.result === 'todo' ? '-' : Number(day.partOne.took).toFixed(2) + 'ms';

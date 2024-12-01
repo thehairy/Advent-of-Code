@@ -1,1 +1,3 @@
-require('./2023/index');
+const year = process.argv[2];
+
+require(`./${year}/index`);
