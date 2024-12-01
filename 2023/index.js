@@ -28,8 +28,8 @@ const config = {
     },
 }
 
-readdirSync('./2023').filter(n => n.includes('Day')).forEach((i, index) => {
-    const day = require(`./${i}/index.js`).run();
+const runDay = async (i, index) => {
+    const day = await require(`./${i}/index.js`).run();
 
     if (!process.argv[3] || process.argv[3] !== 'true') {
         day.partOne.result = '|'.repeat(day.partOne.result.toString().length);
@@ -44,8 +44,17 @@ readdirSync('./2023').filter(n => n.includes('Day')).forEach((i, index) => {
     const cTook = Number(day.took).toFixed(2) > 10 ? red(took) : green(took);
 
     data.push([index % 2 === 0 ? r(i.split(' ')[1]) : g(i.split(' ')[1]), [day.partOne.result, day.partTwo.result].includes('todo') ? red(day.desc) : green(day.desc), day.partOne.result === 'todo' ? red(day.partOne.result) : day.partOne.result, cPartOneTook, day.partTwo.result === 'todo' ? red(day.partTwo.result) : day.partTwo.result, cPartTwoTook, [day.partOne.result, day.partTwo.result].includes('todo') ? red('-') : cTook]);
-})
+};
 
-data.sort((a, b) => parseInt(a[0]) - parseInt(b[0]))
+const main = async () => {
+    const days = readdirSync('./2023').filter(n => n.includes('Day'));
+    for (let i = 0; i < days.length; i++) {
+        await runDay(days[i], i);
+    }
+    
+    data.sort((a, b) => parseInt(a[0]) - parseInt(b[0]));
+    console.log(table(data, config));
+    process.exit(0);
+};
 
-console.log(table(data, config));
+main().catch(console.error);
