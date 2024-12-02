@@ -1,6 +1,5 @@
 const path = require("path");
 const fs = require('fs');
-const { execSync } = require("child_process");
 
 const input = fs.readFileSync(path.resolve(__dirname, "../input.txt")).toString().split('\r\n')
 
