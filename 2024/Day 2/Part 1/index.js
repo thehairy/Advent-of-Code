@@ -1,15 +1,11 @@
 const path = require("path");
 const fs = require('fs');
+const { execSync } = require("child_process");
 
 const input = fs.readFileSync(path.resolve(__dirname, "../input.txt")).toString().split('\r\n')
 
 module.exports = {
     run: () => {
-        /**
-         * The levels are either all increasing or all decreasing.
-         * Any two adjacent levels differ by at least one and at most three.
-         */
-
         let amountSafe = 0;
         for (const line of input) {
             const levels = line.split(' ').map(Number);
