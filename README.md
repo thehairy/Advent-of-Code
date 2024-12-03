@@ -7,4 +7,5 @@ You don't need a computer science background to participate - just a little prog
 ## **How to run**
 
 Run with `npm install && node . YYYY show` (show - if the answers should be unspoilered)
+<br>
 To generate a new day: `node . --generate`
